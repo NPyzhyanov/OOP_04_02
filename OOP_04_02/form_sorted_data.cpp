@@ -6,7 +6,7 @@
 
 std::string form_sorted_data(int addresses_amount, Address** p_p_addresses)
 {
-    std::string addresses_array[addresses_amount];
+    std::string* addresses_array = new std::string[addresses_amount]();
     
     for (int address = 0; address < addresses_amount; address++)
     {
@@ -29,5 +29,7 @@ std::string form_sorted_data(int addresses_amount, Address** p_p_addresses)
         sorted_addresses += (addresses_array[address] + "\n");
     }
     
+    delete[] addresses_array;
+
     return sorted_addresses;
 }

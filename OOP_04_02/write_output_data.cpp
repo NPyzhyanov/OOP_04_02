@@ -28,7 +28,7 @@ void write_output_data(int addresses_amount, Address** p_p_addresses)
         output_file.close();
         return;
     }
-    
+
     std::string output_data = form_sorted_data(addresses_amount, p_p_addresses);
     
     output_file << output_data;
